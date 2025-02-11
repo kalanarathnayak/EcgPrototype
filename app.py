@@ -5,6 +5,7 @@ import torch
 import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
+from click import style
 from torch.utils.data import DataLoader
 import wfdb
 from wfdb import processing
@@ -286,7 +287,7 @@ def main():
         st.session_state.analysis_done = False
 
     # File uploaders for both .dat and .hea files
-    st.write("Please upload both .dat and .hea files for your ECG record (files must have the same name):")
+    st.write(":red[Please upload both .dat and .hea files for your ECG record (files must have the same name):]")
     col1, col2 = st.columns(2)
 
     with col1:
