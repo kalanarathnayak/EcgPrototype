@@ -1,0 +1,18 @@
+# Core ML and computation
+torch==2.6.0
+numpy==2.2.2
+pandas==2.2.3
+
+# Deep Learning and ML metrics
+scikit-learn==1.6.1
+scipy==1.15.1
+
+# Signal Processing and ECG data
+wfdb==4.2.0
+
+# Visualization packages
+matplotlib==3.10.0
+seaborn==0.13.2
+
+# Optional: For Apple Silicon Mac support
+# torch.mps  # Uncomment if using Apple Silicon

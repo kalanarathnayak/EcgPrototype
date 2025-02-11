@@ -1,0 +1,13 @@
+# Core packages for deployment
+streamlit==1.42.0
+torch==2.6.0
+numpy==2.2.2
+pandas==2.2.3
+
+# Visualization
+plotly==6.0.0
+
+# Data processing
+wfdb==4.2.0
+scipy==1.15.1
+scikit-learn==1.6.1
