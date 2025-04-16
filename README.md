@@ -1,5 +1,5 @@
 # ULTRA-ECG 🫀
-### Transformer based model for optimized ECG signal anomaly detection in imbalanced datasets
+### Transformer based model for optimizing ECG signal anomaly detection in imbalanced datasets
 
 ## Requirements
 
