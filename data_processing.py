@@ -46,7 +46,6 @@ def preprocess_data(data_path, patients):
         qrs.detect()
         peaks = qrs.qrs_inds
 
-        # Extract beats (±50 ms around R-peaks)
         for peak in peaks[1:-1]:
             start = peak - WINDOW_SIZE // 2
             end = peak + WINDOW_SIZE // 2

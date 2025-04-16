@@ -1,11 +1,8 @@
-from os import remove
-
 import streamlit as st
 import torch
 import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
-from click import style
 from torch.utils.data import DataLoader
 import wfdb
 from wfdb import processing

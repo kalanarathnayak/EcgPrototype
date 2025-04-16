@@ -2,6 +2,7 @@ import torch
 import numpy as np
 from torch.utils.data import DataLoader
 from sklearn.metrics import f1_score, classification_report
+import matplotlib.pyplot as plt
 
 from config import *
 from data_processing import preprocess_data, prepare_data
@@ -28,6 +29,25 @@ def main():
     train_data = train_df.drop(['target', 'patient_id'], axis=1).values
     val_data = val_df.drop(['target', 'patient_id'], axis=1).values
     test_data = test_df.drop(['target', 'patient_id'], axis=1).values
+
+    print("\nVisualizing some preprocessed normal heartbeats...")
+    num_beats_to_plot = 3
+    if len(train_data) >= num_beats_to_plot:
+        plt.figure(figsize=(10, 2 * num_beats_to_plot))
+        plt.suptitle("Sample Preprocessed Normal Heartbeats")
+        for i in range(num_beats_to_plot):
+            plt.subplot(num_beats_to_plot, 1, i + 1)
+            plt.plot(train_data[i])
+            plt.title(f"Normal Beat Sample {i + 1}")
+            plt.ylabel("Scaled Amplitude")
+            if i == num_beats_to_plot - 1:
+                plt.xlabel("Sample Index")
+            else:
+                plt.xticks([])
+        plt.tight_layout(rect=[0, 0.03, 1, 0.97])
+        plt.show()
+    else:
+        print(f"Warning: Not enough normal beats in train_data to plot {num_beats_to_plot} samples.")
 
     train_dataset = ECGDataset(train_data, augment=True)
     val_dataset = ECGDataset(val_data, augment=False)
